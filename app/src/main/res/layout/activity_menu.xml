@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/openCameraBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cameraList"
+        android:layout_alignParentEnd="true"
+        android:onClick="cameraClicked"
+        android:text="Camera" />
+
+    <Button
+        android:id="@+id/openFileBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView"
+        android:onClick="openClicked"
+        android:text="Open" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/openCameraBtn" />
+
+    <Button
+        android:id="@+id/detectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/openFileBtn"
+        android:layout_alignBottom="@+id/openFileBtn"
+        android:layout_toEndOf="@+id/openFileBtn"
+        android:onClick="detectClicked"
+        android:text="Detect" />
+
+    <Button
+        android:id="@+id/stitchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/detectButton"
+        android:layout_alignBottom="@+id/detectButton"
+        android:layout_toEndOf="@+id/detectButton"
+        android:onClick="stitchClicked"
+        android:text="Stitcher" />
+
+    <Spinner
+        android:id="@+id/cameraList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@+id/openCameraBtn"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Canera mode"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+</RelativeLayout>
