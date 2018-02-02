@@ -32,7 +32,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MenuActivity extends AppCompatActivity {
 
     private static final String TAG = "MenuActivity";
@@ -44,6 +43,8 @@ public class MenuActivity extends AppCompatActivity {
             Log.d(TAG, "OpenCV loaded");
         }
     }
+
+
 
     private static int PICK_IMAGE_REQUEST = 1;
     Uri imageUri;
@@ -170,9 +171,24 @@ public class MenuActivity extends AppCompatActivity {
         imageView.setImageBitmap(bitmap);
     }
 
+    public void cameraClicked(View v){
+        switch(cameraMode){
+            case "Linear panorama":
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                break;
 
+            case "Cabinet detection":
+                intent = new Intent(getApplicationContext(), DetectionPreviewActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
 
-
+    public void stitchClicked(View v){
+        Intent intent = new Intent(getApplicationContext(), StitcherActivity.class);
+        startActivity(intent);
+    }
 
 
     Point midPoint(Point A, Point B){
